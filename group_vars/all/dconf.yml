@@ -1,0 +1,53 @@
+dconf_configs:
+  # Gnome Terminal
+  /org/gnome/terminal/legacy/keybindings/next-tab: "'<Alt>braceright'"
+  /org/gnome/terminal/legacy/keybindings/prev-tab: "'<Alt>braceleft'"
+  /org/gnome/terminal/legacy/profiles:/default: "'058146e4-101b-43a0-8ed4-0ef6932f9a05'"
+  /org/gnome/terminal/legacy/profiles/list: "['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '058146e4-101b-43a0-8ed4-0ef6932f9a05']"
+
+  /org/gnome/terminal/legacy/profiles:/:058146e4-101b-43a0-8ed4-0ef6932f9a05/background-color: "'rgb(0,0,0)'"
+  /org/gnome/terminal/legacy/profiles:/:058146e4-101b-43a0-8ed4-0ef6932f9a05/background-transparency-percent: "8"
+  /org/gnome/terminal/legacy/profiles:/:058146e4-101b-43a0-8ed4-0ef6932f9a05/font: "'Comic Mono v2 16'"
+  /org/gnome/terminal/legacy/profiles:/:058146e4-101b-43a0-8ed4-0ef6932f9a05/foreground-color: "'rgb(255,255,255)'"
+  /org/gnome/terminal/legacy/profiles:/:058146e4-101b-43a0-8ed4-0ef6932f9a05/login-shell: "true"
+  /org/gnome/terminal/legacy/profiles:/:058146e4-101b-43a0-8ed4-0ef6932f9a05/palette: "['rgb(46,52,54)', 'rgb(204,0,0)', 'rgb(78,154,6)', 'rgb(196,160,0)', 'rgb(52,101,164)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(211,215,207)', 'rgb(85,87,83)', 'rgb(239,41,41)', 'rgb(138,226,52)', 'rgb(252,233,79)', 'rgb(114,159,207)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(238,238,236)']"
+  /org/gnome/terminal/legacy/profiles:/:058146e4-101b-43a0-8ed4-0ef6932f9a05/use-system-font: "false"
+  /org/gnome/terminal/legacy/profiles:/:058146e4-101b-43a0-8ed4-0ef6932f9a05/use-theme-colors: "false"
+  /org/gnome/terminal/legacy/profiles:/:058146e4-101b-43a0-8ed4-0ef6932f9a05/use-theme-transparency: "false"
+  /org/gnome/terminal/legacy/profiles:/:058146e4-101b-43a0-8ed4-0ef6932f9a05/use-transparent-background: "true"
+  /org/gnome/terminal/legacy/profiles:/:058146e4-101b-43a0-8ed4-0ef6932f9a05/visible-name: "'Default'"
+
+  # Detach modal dialog
+  /org/gnome/shell/overrides/attach-modal-dialogs: "false"
+
+  # Input source
+  /org/gnome/desktop/input-sources/xkb-options: "['compose:ralt', 'ctrl:nocaps']"
+  /org/gnome/desktop/input-sources/per-window: "true"
+
+  # Touchpad
+  /org/gnome/desktop/peripherals/touchpad/tap-to-click: "true"
+  /org/gnome/desktop/peripherals/touchpad/two-finger-scrolling-enabled: "true"
+
+  # Button places on left
+  /org/gnome/desktop/wm/preferences/button-layout: "'close,minimize,maximize:'"
+
+  # Keybinds
+  /org/gnome/desktop/wm/keybindings/activate-window-menu: "['<Super>space']"
+  /org/gnome/desktop/wm/keybindings/close: "['<Alt>q']"
+  /org/gnome/desktop/wm/keybindings/switch-input-source: "['<Alt>space']"
+  /org/gnome/desktop/wm/keybindings/switch-input-source-backward: "['<Shift><Alt>space']"
+
+  # Dash to Dock
+  /org/gnome/shell/extensions/dash-to-dock/dock-fixed: "false"
+  /org/gnome/shell/extensions/dash-to-dock/dock-position: "'BOTTOM'"
+  /org/gnome/shell/extensions/dash-to-dock/show-mounts-network: "false"
+  /org/gnome/shell/extensions/dash-to-dock/show-mounts-only-mounted: "true"
+
+  # Tilling assistant
+  /org/gnome/shell/extensions/tiling-assistant/enable-tiling-popup: "false"
+
+  # World clocks
+  /org/gnome/shell/world-clocks/locations: "[<(uint32 2, <('Eiðar', 'BIEG', true, [(1.1394091075258674, -0.25132741228718347)], [(1.1408635602047243, -0.25045474766118631)])>)>, <(uint32 2, <('Berlin', 'EDDB', true, [(0.91426163401859872, 0.23591034304566436)], [(0.91658875132345297, 0.23387411976724018)])>)>, <(uint32 2, <('Vancouver', 'KVUO', true, [(0.79622405677513375, -2.1407578366569551)], [(0.79654607002212663, -2.1408467960889292)])>)>]"
+
+  # Panel date format
+  /org/gnome/shell/extensions/panel-date-format/format: "'%F %a %T'"
