@@ -1,5 +1,6 @@
 - hosts: localhost
   connection: local
+  ignore_errors: true
   roles:
     - role: markosamuli.linuxbrew
       linuxbrew_use_installer: true
