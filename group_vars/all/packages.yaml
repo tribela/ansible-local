@@ -1,7 +1,14 @@
 apt_packages:
+  - curl
   - rclone
   - git
   - vim
+  - tmux
+  - zsh
+
+  - albert
+  - firefox
+  - spotify-client
 
 brew_packages:
   - neovim
@@ -17,4 +24,5 @@ brew_packages:
 
   - ripgrep
   - jq
+  - restic
   - creativeprojects/tap/resticprofile
