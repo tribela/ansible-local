@@ -1,0 +1,4 @@
+---
+roles:
+  - name: markosamuli.linuxbrew
+    version: "v2.0.2"
