@@ -5,6 +5,7 @@ apt_packages:
   - vim
   - tmux
   - zsh
+  - xclip
 
   - albert
   - firefox
