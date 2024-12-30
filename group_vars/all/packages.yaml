@@ -1,0 +1,19 @@
+apt_packages:
+  - rclone
+  - git
+  - vim
+
+brew_packages:
+  - neovim
+  - neovide
+  - rclone
+
+  - direnv
+  - pyenv
+  - pyenv-virtualenvwrapper
+  - rbenv
+  - volta
+  - rust
+
+  - ripgrep
+  - creativeprojects/tap/resticprofile

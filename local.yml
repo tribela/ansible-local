@@ -1,0 +1,17 @@
+- hosts: localhost
+  connection: local
+  roles:
+    - role: markosamuli.linuxbrew
+      linuxbrew_use_installer: true
+      linuxbrew_init_shell: false
+  tasks:
+    - import_tasks: tasks/apt.yml
+      become: true
+      tags:
+        - apt
+    - import_tasks: tasks/dconf.yml
+      tags:
+        - dconf
+    - import_tasks: tasks/brew.yml
+      tags:
+        - brew

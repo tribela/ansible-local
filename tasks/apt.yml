@@ -1,0 +1,33 @@
+- name: Remove snap firefox
+  snap:
+    name: firefox
+    state: disabled
+
+- name: Add firefox deb source
+  copy:
+    dest: /etc/apt/sources.list.d/mozilla.list
+    content: |
+      deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main
+
+- name: Add firefox GPG key
+  shell:
+    cmd: wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O /etc/apt/keyrings/packages.mozilla.org.asc
+    creates: /etc/apt/keyrings/packages.mozilla.org.asc
+
+- name: Disable snap firefox
+  copy:
+    dest: /etc/apt/preferences.d/mozilla
+    content: |
+      Package: *
+      Pin: origin packages.mozilla.org
+      Pin-Priority: 1000
+
+      Package: firefox*
+      Pin: release o=Ubuntu
+      Pin-Priority: -1
+
+
+- name: Install apt packages
+  apt:
+    name: "{{ apt_packages }}"
+    state: present
