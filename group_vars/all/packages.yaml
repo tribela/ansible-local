@@ -16,4 +16,5 @@ brew_packages:
   - rust
 
   - ripgrep
+  - jq
   - creativeprojects/tap/resticprofile
