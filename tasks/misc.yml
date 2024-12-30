@@ -1,0 +1,10 @@
+- name: Check discord update is disabled
+  command: grep -Fq '"SKIP_HOST_UPDATE"' ~/.config/discord/settings.json
+  check_mode: false
+  register: discord_updated_disabled
+  changed_when: false
+  failed_when: false
+
+- name: Disable discord force update
+  shell: cat ~/.config/discord/settings.json | jq '.SKIP_HOST_UPDATE = true' | tee ~/.config/discord/settings.json
+  changed_when: discord_updated_disabled.rc != 0

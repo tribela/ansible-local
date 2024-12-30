@@ -16,3 +16,6 @@
     - import_tasks: tasks/brew.yml
       tags:
         - brew
+    - import_tasks: tasks/misc.yml
+      tags:
+        - misc
