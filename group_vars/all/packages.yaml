@@ -1,6 +1,7 @@
 apt_packages:
   - curl
   - rclone
+  - python3-psutil  # For dconf
   - git
   - vim
   - tmux
