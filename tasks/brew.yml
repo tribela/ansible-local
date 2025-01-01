@@ -1,4 +1,5 @@
 - name: Install homebrew packages
   community.general.homebrew:
-    name: "{{ brew_packages }}"
+    name: "{{ item }}"
     state: present
+  loop: "{{ brew_packages }}"
