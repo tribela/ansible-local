@@ -22,7 +22,6 @@ brew_packages:
   - pyenv-virtualenvwrapper
   - rbenv
   - volta
-  - rust
 
   - ripgrep
   - jq
