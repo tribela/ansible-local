@@ -40,6 +40,11 @@ dconf_configs:
   /org/gnome/shell/extensions/dash-to-dock/dock-position: "'BOTTOM'"
   /org/gnome/shell/extensions/dash-to-dock/show-mounts-network: "false"
   /org/gnome/shell/extensions/dash-to-dock/show-mounts-only-mounted: "true"
+  /org/gnome/shell/extensions/dash-to-dock/click-action: "'focus-minimize-or-appspread'"
+  /org/gnome/shell/extensions/dash-to-dock/disable-overview-on-startup: "true"
+  /org/gnome/shell/extensions/dash-to-dock/intellihide-mode: "'FOCUS_APPLICATION_WINDOWS'"
+  /org/gnome/shell/extensions/dash-to-dock/show-mounts-network: "false"
+  /org/gnome/shell/extensions/dash-to-dock/show-mounts-only-mounted: "true"
 
   # Tilling assistant
   /org/gnome/shell/extensions/tiling-assistant/enable-tiling-popup: "false"
