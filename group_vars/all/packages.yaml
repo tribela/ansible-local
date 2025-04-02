@@ -6,15 +6,15 @@ apt_packages:
   - vim
   - tmux
   - zsh
-  - xclip
 
+apt_packages_desktop:
   - albert
   - firefox
   - spotify-client
+  - xclip
 
 brew_packages:
   - neovim
-  - neovide
   - rclone
 
   - direnv
@@ -27,3 +27,6 @@ brew_packages:
   - jq
   - restic
   - creativeprojects/tap/resticprofile
+
+brew_packages_desktop:
+  - neovide

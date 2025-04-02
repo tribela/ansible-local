@@ -5,6 +5,7 @@
     - role: markosamuli.linuxbrew
       linuxbrew_use_installer: true
       linuxbrew_init_shell: false
+      when: ansible_user_id != 'root'
   tasks:
     - import_tasks: tasks/apt.yml
       become: true
@@ -13,7 +14,9 @@
     - import_tasks: tasks/dconf.yml
       tags:
         - dconf
+      when: ansible_env.DISPLAY is defined
     - import_tasks: tasks/brew.yml
+      when: ansible_user_id != 'root'
       tags:
         - brew
     - import_tasks: tasks/rust.yml

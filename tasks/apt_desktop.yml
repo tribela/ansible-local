@@ -1,0 +1,51 @@
+- name: Remove snap Firefox
+  snap:
+    name: firefox
+    state: disabled
+
+- name: Add Firefox
+  copy:
+    dest: /etc/apt/sources.list.d/mozilla.list
+    content: |
+      deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main
+
+- name: Add Firefox GPG key
+  shell:
+    cmd: wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O /etc/apt/keyrings/packages.mozilla.org.asc
+    creates: /etc/apt/keyrings/packages.mozilla.org.asc
+
+- name: Disable snap Firefox
+  copy:
+    dest: /etc/apt/preferences.d/mozilla
+    content: |
+      Package: *
+      Pin: origin packages.mozilla.org
+      Pin-Priority: 1000
+
+      Package: firefox*
+      Pin: release o=Ubuntu
+      Pin-Priority: -1
+
+- name: Add Albert launcher
+  copy:
+    dest: /etc/apt/sources.list.d/home:manuelschneid3r.list
+    content: |
+      deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_24.10/ /
+
+- name: Add Albert GPG key
+  shell:
+    cmd: wget -O- https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_24.10/Release.key | gpg --dearmor | tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null
+    creates: /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg
+
+- name: Add Spotify
+  copy:
+    dest: /etc/apt/sources.list.d/spotify.list
+    content: |
+      deb http://repository.spotify.com stable non-free
+
+- name: Add Spotify GPG key
+  shell:
+    cmd: wget -O- https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+    creates: /etc/apt/trusted.gpg.d/spotify.gpg
+
+
