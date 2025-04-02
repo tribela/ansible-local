@@ -18,8 +18,7 @@ brew_packages:
   - rclone
 
   - direnv
-  - pyenv
-  - pyenv-virtualenvwrapper
+  - uv
   - rbenv
   - volta
 
