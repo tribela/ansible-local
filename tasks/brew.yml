@@ -3,3 +3,5 @@
     name: "{{ item }}"
     state: present
   loop: "{{ brew_packages }}"
+  environment:
+    PATH: "/home/linuxbrew/.linuxbrew/bin:{{ ansible_env.PATH }}"
