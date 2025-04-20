@@ -2,6 +2,6 @@
   community.general.homebrew:
     name: "{{ item }}"
     state: present
-  loop: "{{ brew_packages + (brew_packages_desktop if ansible_env.DISPLAY is defined else []) }}"
+  loop: "{{ brew_packages + (brew_packages_desktop if desktop else []) }}"
   environment:
     PATH: "/home/linuxbrew/.linuxbrew/bin:{{ ansible_env.PATH }}"

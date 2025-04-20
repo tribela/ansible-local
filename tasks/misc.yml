@@ -4,9 +4,9 @@
   register: discord_updated_disabled
   changed_when: false
   failed_when: false
-  when: ansible_env.DISPLAY is defined
+  when: desktop
 
 - name: Disable discord force update
   shell: (cat ~/.config/discord/settings.json || echo '{}' ) | jq '.SKIP_HOST_UPDATE = true' | tee ~/.config/discord/settings.json
   changed_when: discord_updated_disabled.rc != 0
-  when: ansible_env.DISPLAY is defined
+  when: desktop

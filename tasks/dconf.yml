@@ -3,3 +3,4 @@
     key: "{{ item.key }}"
     value: "{{ item.value }}"
   with_dict: "{{ dconf_configs }}"
+  when: desktop

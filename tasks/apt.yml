@@ -1,9 +1,9 @@
 - import_tasks: apt_desktop.yml
-  when: ansible_env.DISPLAY is defined
+  when: desktop
 
 - name: Install apt packages
   apt:
-    name: "{{ apt_packages + (apt_packages_desktop if ansible_env.DISPLAY is defined else []) }}"
+    name: "{{ apt_packages + (apt_packages_desktop if desktop else []) }}"
     state: present
     update_cache: true
     cache_valid_time: "{{ 60 * 60 }}"
@@ -15,4 +15,4 @@
     - https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     - https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2024.04.17_amd64.deb
     - https://discord.com/api/download?platform=linux&format=deb
-  when: ansible_env.DISPLAY is defined
+  when: desktop

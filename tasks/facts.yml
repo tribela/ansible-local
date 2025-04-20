@@ -1,0 +1,4 @@
+---
+- name: "Set desktop"
+  ansible.builtin.set_fact:
+    desktop: "{{ ansible_env.XDG_CURRENT_DESKTOP is defined }}"
