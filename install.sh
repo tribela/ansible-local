@@ -2,13 +2,6 @@
 set -euo pipefail
 
 REPOSITORY=https://github.com/tribela/ansible-local
-REQUIREMENTS="$(mktemp --suffix=.yml)"
-
-cleanup() {
-	rm -rf "$REQUIREMENTS" || true
-}
-
-trap cleanup EXIT
 
 ensure_ansible() {
 	if which ansible &>/dev/null; then
@@ -38,10 +31,8 @@ ensure_ansible() {
 
 echo "Ensure ansible is installed"
 ensure_ansible
-echo "Download galaxy requirements"
-wget -O "$REQUIREMENTS" $REPOSITORY/raw/refs/heads/main/requirements.yml
-echo "Installing galaxy requirements"
-ansible-galaxy install -r "$REQUIREMENTS"
+echo "Install galaxy requirements"
+ansible-pull -U "$REPOSITORY" boot.yml
 echo "Go!"
 ansible-pull -U "$REPOSITORY" -K "$@"
 
