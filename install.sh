@@ -29,11 +29,27 @@ ensure_ansible() {
 	ansible --version &>/dev/null
 }
 
+is_sudo_without_pass() {
+	if SUDO_ASKPASS=${SUDO_ASKPASS:-/bin/false} sudo -A -n true &>/dev/null; then
+		echo "sudo without password is enabled"
+		return 0
+	else
+		echo "sudo without password is not enabled"
+		return 1
+	fi
+}
+
 echo "Ensure ansible is installed"
 ensure_ansible
 echo "Install galaxy requirements"
 ansible-pull -U "$REPOSITORY" boot.yml
+
+ARGS=()
+if ! is_sudo_without_pass; then
+	ARGS+=(-K)
+fi
+
 echo "Go!"
-ansible-pull -U "$REPOSITORY" -K "$@"
+ansible-pull -U "$REPOSITORY" "${ARGS[@]}" "$@"
 
 echo "All done!"
