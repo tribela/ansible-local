@@ -3,6 +3,6 @@
   connection: local
   tasks:
     - name: Install requirements
-      command:
-        cmd: ansible-galaxy install -r requirements.yml
-        chdir: "{{ playbook_dir }}"
+      community.general.ansible_galaxy_install:
+        type: both
+        requirements_file: requirements.yml
