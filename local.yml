@@ -1,15 +1,16 @@
 - hosts: localhost
   connection: local
   ignore_errors: true
+  pre_tasks:
+    - import_tasks: tasks/facts.yml
+      tags:
+        - always
   roles:
     - role: markosamuli.linuxbrew
       linuxbrew_use_installer: true
       linuxbrew_init_shell: false
       when: ansible_user_id != 'root'
   tasks:
-    - import_tasks: tasks/facts.yml
-      tags:
-        - facts
     - import_tasks: tasks/apt.yml
       become: true
       tags:
