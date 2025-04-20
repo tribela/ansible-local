@@ -20,6 +20,7 @@ brew_packages:
   - direnv
   - uv
   - rbenv
+  - deno
   - volta
 
   - ripgrep
