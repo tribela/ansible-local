@@ -2,3 +2,8 @@
 - name: "Set desktop"
   ansible.builtin.set_fact:
     desktop: "{{ ansible_env.XDG_CURRENT_DESKTOP is defined }}"
+
+- name: "Set repository URL"
+  ansible.builtin.set_fact:
+    repo_url: "{{ lookup('pipe', 'git config --get remote.origin.url') }}"
+    chdir: "{{ playbook_dir }}"
