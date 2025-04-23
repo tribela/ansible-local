@@ -1,8 +1,12 @@
+- name: Tap homebrew packages
+  community.general.homebrew_tap:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ brew_taps + (brew_taps_desktop if desktop else []) }}"
+
 - name: Install homebrew packages
   community.general.homebrew:
     name: "{{ item }}"
     state: present
     update_homebrew: true
   loop: "{{ brew_packages + (brew_packages_desktop if desktop else []) }}"
-  environment:
-    PATH: "/home/linuxbrew/.linuxbrew/bin:{{ ansible_env.PATH }}"

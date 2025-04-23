@@ -26,7 +26,12 @@ brew_packages:
   - ripgrep
   - jq
   - restic
-  - creativeprojects/tap/resticprofile
+  - resticprofile
 
 brew_packages_desktop:
   - neovide
+
+brew_taps:
+  - creativeprojects/tap
+
+brew_taps_desktop: []
