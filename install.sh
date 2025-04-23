@@ -3,6 +3,13 @@ set -euo pipefail
 
 REPOSITORY=https://github.com/tribela/ansible-local
 
+fix_envs() {
+	export PYTHONUNBUFFERED=True
+	if [[ -t 1 ]]; then
+		export ANSIBLE_FORCE_COLOR=True
+	fi
+}
+
 ensure_ansible() {
 	if which ansible &>/dev/null; then
 		return 0
@@ -38,6 +45,8 @@ is_sudo_without_pass() {
 		return 1
 	fi
 }
+
+fix_envs
 
 echo "Ensure ansible is installed"
 ensure_ansible
