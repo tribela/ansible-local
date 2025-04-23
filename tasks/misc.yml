@@ -15,4 +15,4 @@
   cron:
     name: "Ansible local"
     special_time: "daily"
-    job: "ansible-pull -U {{ repo_url }} -o &>/dev/null"
+    job: 'ansible-pull -i "$(hostname)," -U {{ repo_url }} -o &>/dev/null'

@@ -12,7 +12,9 @@
   shell:
     cmd: git -C ~/git/dotfiles pull --rebase --autostash
   when: dotfiles_clone.failed
+  changed_when: false
 
 - name: Install dotfiles
   shell:
     cmd: ~/git/dotfiles/install.sh
+  changed_when: false

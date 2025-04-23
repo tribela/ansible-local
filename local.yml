@@ -1,5 +1,4 @@
-- hosts: localhost
-  connection: local
+- hosts: all
   ignore_errors: true
   pre_tasks:
     - import_tasks: tasks/facts.yml

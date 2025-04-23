@@ -1,6 +1,5 @@
 ---
-- hosts: localhost
-  connection: local
+- hosts: all
   tasks:
     - name: Install requirements
       community.general.ansible_galaxy_install:

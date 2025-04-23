@@ -51,7 +51,7 @@ fix_envs
 echo "Ensure ansible is installed"
 ensure_ansible
 echo "Install galaxy requirements"
-ansible-pull -U "$REPOSITORY" boot.yml
+ansible-pull -i "$(hostname)," -U "$REPOSITORY" boot.yml
 
 ARGS=()
 if ! is_sudo_without_pass; then
@@ -59,6 +59,6 @@ if ! is_sudo_without_pass; then
 fi
 
 echo "Go!"
-ansible-pull -U "$REPOSITORY" "${ARGS[@]}" "$@"
+ansible-pull -i "$(hostname)," -U "$REPOSITORY" "${ARGS[@]}" "$@"
 
 echo "All done!"
