@@ -1,4 +1,6 @@
 dconf_configs:
+  # Screen off timeout
+  /org/gnome/desktop/session/idle-delay: "uint32 1800"
   # Gnome Terminal
   /org/gnome/terminal/legacy/keybindings/next-tab: "'<Alt>braceright'"
   /org/gnome/terminal/legacy/keybindings/prev-tab: "'<Alt>braceleft'"
